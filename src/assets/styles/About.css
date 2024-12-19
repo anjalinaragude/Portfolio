@@ -1,82 +1,137 @@
 /* About Section */
 #about {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px; /* Increased max-width for larger card size */
   margin: 50px auto;
-  padding: 20px;
+  padding: 30px; /* Increased padding for more space */
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Flex container for image and content */
+.about-container {
+  display: flex;
+  align-items: center; /* Vertically align content */
+  gap: 40px; /* Increase space between the image and content */
+}
+
+/* Profile Image */
+.profile-image img {
+  width: 180px; /* Increased width for the image */
+  height: 180px;
+  border-radius: 50%; /* Make it round */
+  object-fit: cover; /* Ensure the image fits without distortion */
+  border: 3px solid #FF6347; /* Adding a border to the profile image */
+}
+
+/* Content (Text and Buttons) */
+.about-content {
+  flex: 1; /* Makes the content area take the remaining space */
+}
+
+/* About Section Title */
 #about h2 {
-  text-align: center;
-  font-size: 2em;
+  font-size: 2.5em; /* Larger title font size */
   margin-bottom: 20px;
+  text-align: center;
 }
 
-#about img {
-  display: block;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
+/* About Text */
 #about p {
-  font-size: 1.2em;
-  text-align: center;
+  font-size: 1.3em; /* Increased text size */
+  color: #333;
   margin-bottom: 20px;
+  text-align: center;
 }
 
+/* More Information Container */
 .more-info {
   background-color: #f9f9f9;
-  padding: 15px;
+  padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
+  font-size: 1.2em;
+  color: #555;
 }
 
-/* New button color */
+/* More About Me Button */
 .more-about-btn {
   display: block;
-  width: 200px;
+  width: 220px; /* Increased width */
   margin: 20px auto;
-  padding: 10px 20px;
-  font-size: 1.1em;
-  background-color: #FF6347; /* New button color (Tomato red) */
+  padding: 12px 25px; /* Increased padding for better size */
+  font-size: 1.2em; /* Larger font size */
+  background-color: #FF6347; /* Tomato red color */
   color: white;
   border: none;
-  border-radius: 30px; /* Rounded button */
+  border-radius: 30px; /* Rounded corners */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  
-  /* Positioning and z-index */
   position: relative;
   z-index: 10;
-  
-  /* Continuous animation */
-  animation: moveButton 3s linear infinite; /* Move button continuously */
 }
 
-/* Keyframes for continuous movement (left to right) */
-@keyframes moveButton {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(20px); } /* Move 20px to the right */
-  100% { transform: translateX(0); } /* Reset to the original position */
-}
-
-/* Hover effect with a different color */
+/* Hover Effect for More About Me Button */
 .more-about-btn:hover {
-  background-color: #FF4500; /* Darker red (OrangeRed) when hovered */
+  background-color: #FF4500;
 }
 
-/* Active state for the button */
-.more-about-btn:active {
-  transform: translateY(0); /* Reset the movement when clicked */
+/* CV Download Button Styling */
+.download-cv-btn {
+  display: block;
+  width: 220px; /* Same width as "More About Me" button */
+  margin: 20px auto;
+  padding: 12px 25px; /* Increased padding for better size */
+  font-size: 1.2em; /* Increased font size */
+  background-color: #007BFF; /* Blue background */
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
 }
 
-/* Focus state for the button */
-.more-about-btn:focus {
-  outline: none; /* Remove the outline when the button is focused */
+.download-cv-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.download-cv-btn:active {
+  transform: scale(1);
+}
+
+.download-cv-btn:focus {
+  outline: none;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  #about {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  #about h2 {
+    font-size: 2em;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .more-about-btn, .download-cv-btn {
+    width: 80%; /* Full width on smaller screens */
+  }
 }
