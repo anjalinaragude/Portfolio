@@ -42,7 +42,7 @@ const About = () => {
           {/* Download CV Button */}
           <div className="mt-6">
             <p className="mb-2">Want to know more about my experience? Download my CV below:</p>
-            <a href="/images/Resume1.pdf" download>
+            <a href="/images/Resume_anjali.pdf" download>
               <button className="px-6 py-2 bg-green-500 text-white rounded-full mb-4 shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300 ease-in-out">Download CV</button>
             </a>
           </div>
