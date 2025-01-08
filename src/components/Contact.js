@@ -1,74 +1,24 @@
-// Contact.js
-import React, { useState } from 'react';
-import '../assets/styles/Contact.css';
+import React from 'react';
 
 const Contact = () => {
-  // State to track the form fields
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission
-
-    // Check if all fields are filled
-    if (name && email && message) {
-      // Display success alert
-      alert('Message sent successfully!');
-      
-      // Clear form fields after successful submission
-      setName('');
-      setEmail('');
-      setMessage('');
-    } else {
-      // Display error if any field is empty
-      alert('Please fill in all fields!');
-    }
-  };
-
   return (
-    <section id="contact" className="contact-section">
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out to me through any of the channels below:</p>
-
-      {/* Card container for contact form */}
-      <div className="contact-card">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)} // Update state on input change
-              required
-            />
+    <section id="contact" className="py-16 bg-white rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300 ease-in-out">
+      <div className="max-w-4xl mx-auto px-4">
+        <h2 className="text-3xl font-semibold text-center mb-8">Contact Me</h2>
+        <form className="space-y-4">
+          <div>
+            <label className="block text-lg font-medium">Your Name</label>
+            <input type="text" className="w-full p-2 border rounded-lg" />
           </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)} // Update state on input change
-              required
-            />
+          <div>
+            <label className="block text-lg font-medium">Email Address</label>
+            <input type="email" className="w-full p-2 border rounded-lg" />
           </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)} // Update state on input change
-              required
-            ></textarea>
+          <div>
+            <label className="block text-lg font-medium">Message</label>
+            <textarea className="w-full p-2 border rounded-lg" rows="5"></textarea>
           </div>
-          <button type="submit">Send Message</button>
+          <button className="w-full py-2 bg-blue-500 text-white rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300 ease-in-out">Submit</button>
         </form>
       </div>
     </section>
